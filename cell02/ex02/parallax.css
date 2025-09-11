@@ -1,0 +1,35 @@
+div{
+	position: relative;
+	text-align: center;
+	width: 100vw;
+	display: block;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#top {
+	background-image: url(https://t3.ftcdn.net/jpg/00/95/80/68/360_F_95806800_21J2TVJMLM8KcK2KhAQAdsnZOMRTYQ5R.jpg);
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+#mid {
+	height: 20vh;
+	background-color: black;
+	color: white;
+}
+
+#bottom {
+	background-image: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVhY2h8ZW58MHx8MHx8fDA%3D);
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.centered {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10%;
+}
