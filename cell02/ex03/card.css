@@ -1,0 +1,65 @@
+* {
+	font-family: "Work Sans", sans-serif;
+}
+
+th {
+	font-size: 2vw;
+}
+
+#tabl {
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+}
+
+table {
+	border-radius: 20px;
+	box-shadow: 3.4px 6.9px 6.9px hsl(0deg 0% 0% / 0.39);
+	padding: 1vw;
+	transition: 0.4s;
+}
+
+tr {
+	display: flex;
+	justify-content: center;
+}
+
+img {
+	width: 25vw;
+}
+
+#intra {
+	font-size: 2vw;
+}
+
+#icons {
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 5px;
+}
+
+.icon {
+    height: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+table:hover {
+	box-shadow: 7.9px 15.8px 15.8px hsl(0deg 0% 0% / 0.25);
+	transition: 0.4s;
+}
