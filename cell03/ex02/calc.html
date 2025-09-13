@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calc</title>
+    </head>
+    <body>
+        <form id="form">
+            <input type="text" id="st">
+            <select name="operator" id="op">
+              <option>+</option>
+              <option>-</option>
+              <option>*</option>
+              <option>/</option>
+              <option>%</option>
+            </select>
+            <input type="text" id="nd">
+            <button onclick="calculate()">Try me!</button>
+        </form>
+    </body>
+    <script>
+		var timeleft = 30;
+        var ticker = setInterval(countdown, 1000);
+        function countdown() {
+            if (timeleft == -1) {
+                clearTimeout(ticker);
+                alert("Please, use me...");
+                timeleft = 30;
+                ticker = setInterval(countdown, 1000);
+            }
+            timeleft--;
+        }
+        function calculate(){
+            const st = parseFloat(document.getElementById("st").value);
+            const op = document.getElementById("op").value;
+            const nd = parseFloat(document.getElementById("nd").value);
+            if (st < 0 || nd < 0 || isNaN(st) || isNaN(nd)){
+                console.log("Error :(");
+                alert("Error :(");
+                return;
+            }
+            let answer;
+            switch (op){
+                case "+":
+                    answer = (st + nd);
+                    break;
+                case "-":
+                    answer = (st - nd);
+                    break;
+                case "*":
+                    answer = (st * nd);
+                    break;
+                case "/":
+                    answer = (st / nd);
+                    if (nd == 0) {
+                    alert("It’s over 9000!");
+                    console.log(answer);
+                    return;
+                }
+                    break;
+                case "%":
+                    answer = (st % nd);
+                    if (nd == 0) {
+                    alert("It’s over 9000!");
+                    console.log(answer);
+                    return;}
+                    break;
+            }
+            console.log(answer);
+            alert(answer);
+        }
+    </script>
+</html>
