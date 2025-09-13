@@ -1,18 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Balloon</title>
-	<style>
-		.ball {
-			background-color: red;
-			border-radius: 30;
-		}
-	</style>
-</head>
-<body>
-	<div id="ball">
-	</div>
-</body>
+<html>
+    <head>
+        <title>Balloon</title>
+    </head>
+    <body>
+        <style>
+            div {
+                background-color: red;
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+            }
+        </style>
+        <div onclick="clicked()" onmouseleave="left()" id="Balloon"></div>
+    </body>
+    <script>
+        const Balloon = document.getElementById("Balloon");
+        const colors = ["red", "green", "blue"];
+        var n = 0;
+        function clicked(){
+            let elem = document.querySelector("#Balloon");
+            let rect = elem.getBoundingClientRect();
+            //increase size
+            let px = rect["height"] + 10
+            Balloon.style.height = px + "px";
+            Balloon.style.width = px + "px";
+            //color change
+            switch (n){
+                case 2:
+                    n = -1;
+                    break;
+            }
+            n = n + 1
+            Balloon.style.backgroundColor = colors[n];
+            if (px > 420) {
+                Balloon.style.height = "200px";
+                Balloon.style.width = "200px";
+            }
+        }
+        function left(){
+            let elem = document.querySelector("#Balloon");
+            let rect = elem.getBoundingClientRect();
+            switch (rect["height"]){
+                case 200:
+                    return;
+            }
+            let px = rect["height"] - 5;
+            Balloon.style.height = px + "px";
+            Balloon.style.width = px + "px";
+            switch (n){
+                case 0:
+                    n = 3;
+                    break;
+            }
+            n = n - 1;
+            Balloon.style.backgroundColor = colors[n];
+        }
+    </script>
 </html>
